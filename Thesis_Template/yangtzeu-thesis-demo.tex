@@ -1,0 +1,95 @@
+%% An Introduction to LaTeX Thesis Template of Yangtze University
+%%
+%% Created by gis-xh
+
+% 导言区
+
+% 使用ctexart类，12pt字号，a4纸张，单页模式
+\documentclass[UTF8, 12pt, a4paper, oneside]{ctexart}
+% 使用inputenc宏包，设置文档编码方式
+% \usepackage[UTF8]{inputenc}
+\usepackage{amsmath, amsthm, amssymb, graphicx}
+\usepackage[bookmarks=true, colorlinks, citecolor=blue, linkcolor=black]{hyperref}
+
+% 使用geometry宏包，设置页边距
+\usepackage{geometry}
+\geometry{left=3.0cm,right=3.0cm,top=3.0cm,bottom=2.5cm}
+% 设置行间距
+\linespread{1.25}
+% 设置标准字间距
+\usepackage{microtype}
+
+% 设置页眉页脚
+\usepackage{fancyhdr} % 引入宏包
+\pagestyle{fancy} % 设置页面样式为 fancy
+\fancyhf{} % 清除默认的页眉页脚
+% 页眉中间显示小五号宋体的章节名称
+\fancyhead[C]{\zihao{-5}\songti\leftmark}
+% 页脚中间显示小五号宋体的页码
+\fancyfoot[C]{\zihao{-5}\songti\thepage}
+
+\usepackage{titlesec} 
+% 定义封面内容
+% \title{A Sample LaTeX Document} \author{测绘QX221 谢泓} \date{\today}
+% % 定义封面样式
+% \titleformat{\title}{\centering\Huge\bfseries}{\thetitle}{1em}{}
+% \titleformat{\author}{\centering\Large}{\theauthor}{1em}{}
+% \titleformat{\date}{\centering}{\thedate}{1em}{}
+
+\begin{document}
+
+%第一个封面，没有图片logo
+\begin{titlepage}
+    \centering
+    \vspace*{5cm} %设置标题距离页面顶部的距离
+    \includegraphics[height=1.69cm, width=6.68cm]{./figures/Yangtze_University.png}
+    
+    \vspace{1cm}
+    {\Huge 硕 士 研 究 生 学 位 论 文}\par %设置标题字体大小和换行
+    \vspace{1cm} %设置副标题距离标题的距离
+    {\Large 基于 Latex 的模板}\par %设置副标题字体大小和换行
+    \vfill %填充垂直空白
+    {\Large 作者：我}\par %设置作者信息字体大小和换行
+    \vspace{0.5cm} %设置日期距离作者信息的距离
+    {\Large 论文起止日期：2022年1月1日至}\par %设置日期字体大小和换行
+\end{titlepage}
+
+%第二个封面，有图片logo
+\begin{titlepage}
+    \centering
+    \vspace*{3cm} %设置图片logo距离页面顶部的距离
+    % 插入图片logo
+    \includegraphics[height=2.86cm,width=2.86cm]{./figures/Yangtze_University_logo.png}
+    \par
+    \includegraphics[height=1.69cm, width=6.68cm]{./figures/Yangtze_University.png}
+    
+    \vspace{1cm} %设置标题距离图片logo的距离
+    {\Huge 这是我的标题}\par %设置标题字体大小和换行
+    \vspace{1cm} %设置副标题距离标题的距离
+    {\Large 这是我的副标题}\par %设置副标题字体大小和换行
+    \vfill %填充垂直空白
+    {\Large 作者：我}\par %设置作者信息字体大小和换行
+    \vspace{0.5cm} %设置日期距离作者信息的距离
+    {\Large 日期：2022年1月1日}\par %设置日期字体大小和换行
+\end{titlepage}
+
+\input{pages/abstract} % 引入中文摘要
+\newpage % 另起一页
+
+\tableofcontents % 生成目录
+\newpage % 另起一页
+
+\input{pages/enabstract} % 引入英文摘要
+\newpage % 另起一页
+
+\input{pages/chapter1} % 引入第一章
+\newpage % 另起一页
+
+\input{pages/achievements} % 引入个人成果
+\newpage % 另起一页
+
+\input{pages/thanks} % 引入致谢
+
+
+\end{document}
+
